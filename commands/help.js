@@ -8,6 +8,6 @@ module.exports = {
         this.exemple = `${this.prefix}${this.name}`;
     },
     execute(message, args) {
-        message.channel.send("Check your messages ;)");
+        message.react(':ok_hand:');
     }
 }
