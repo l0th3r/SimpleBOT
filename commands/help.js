@@ -7,4 +7,7 @@ module.exports = {
     set_exemple() {
         this.exemple = `${this.prefix}${this.name}`;
     },
+    execute(message, args) {
+        message.channel.send("Check your messages ;)");
+    }
 }

@@ -47,8 +47,9 @@ client.on('message', message =>{
     if(command === 'help') {
         var temp = help_message();
         message.author.send(temp);
+        client.commands.get('help').execute(message, args);
     }
-    else if(command === 'w') {
+    else if(command === 'wesh') {
         client.commands.get('wesh').execute(message, args);
     }
 });
