@@ -8,6 +8,6 @@ module.exports = {
         this.exemple = `${this.prefix}${this.name}`;
     },
     execute(message, args) {
-        message.react(':ok_hand:');
+        message.react('😄');
     }
 }
