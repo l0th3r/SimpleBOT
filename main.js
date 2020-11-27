@@ -37,7 +37,7 @@ client.once('ready', () => {
     console.log('== SimpleBot is ON');
 });
 
-client.once('message', message =>{
+client.on('message', message =>{
     if(!message.content.startsWith(PREFIX) || message.author.bot) return;
     const args = message.content.slice(PREFIX.length).split(/ +/);
     const command = args.shift().toLowerCase();
@@ -48,7 +48,7 @@ client.once('message', message =>{
         var temp = help_message();
         message.author.send(temp);
     }
-    else if(command === 'wesh') {
+    else if(command === 'w') {
         client.commands.get('wesh').execute(message, args);
     }
 });
