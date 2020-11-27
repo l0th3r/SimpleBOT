@@ -39,19 +39,22 @@ client.once('ready', () => {
 });
 
 client.on('message', message =>{
-    if(!message.content.startsWith(PREFIX) || message.author.bot) return;
-    const args = message.content.slice(PREFIX.length).split(/ +/);
-    const command = args.shift().toLowerCase();
-
-
-    //catch commands
-    if(command === 'help') {
-        var temp = help_message();
-        message.author.send(temp);
-        client.commands.get('help').execute(message, args);
+    if(message.content.includes('i feel alone')) {
+        message.author.send("We dont know each other but dm me if you want to talk L'0th3r#2451 :)");
     }
-    else if(command === 'wesh') {
-        client.commands.get('wesh').execute(message, args);
+    else if(message.content.startsWith(PREFIX) && !message.author.bot) {
+        const args = message.content.slice(PREFIX.length).split(/ +/);
+        const command = args.shift().toLowerCase();
+
+        //catch commands
+        if(command === 'help') {
+            var temp = help_message();
+            message.author.send(temp);
+            client.commands.get('help').execute(message, args);
+        }
+        else {
+            client.commands.get(command).execute(message, args);
+        }
     }
 });
 
