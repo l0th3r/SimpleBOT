@@ -1,3 +1,4 @@
+require('dotenv').config();
 const fs = require('fs');
 
 //DISCORD SETUP
@@ -56,4 +57,4 @@ client.on('message', message =>{
 
 
 // connect to the bot
-client.login('NzgxOTY5NjQxMzU4NDkxNjU4.X8FX-g.egZ00PfZHyZaZUoeRkkJ9JgPQTQ');
+client.login(process.env.API_KEY);
