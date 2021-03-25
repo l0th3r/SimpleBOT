@@ -25,8 +25,8 @@ var help_message = () => {
 
     for(const file of commandFiles) {
         command = require(`./commands/${file}`);
-
-        temp = `${quotes}Command: ${command.name}
+        temp = `${quotes}
+Command: ${command.name}
 Description: ${command.description}
 Example of use: "${command.exemple}"${quotes}`;
         str = str + temp;
@@ -36,11 +36,12 @@ Example of use: "${command.exemple}"${quotes}`;
 
 client.once('ready', () => {
     console.log('== SimpleBot is ON');
+    client.user.setActivity("Le server des og", { type: "WATCHING"})
 });
 
 client.on('message', message =>{
     if(message.content.includes('i feel alone')) {
-        message.author.send("We dont know each other but dm me if you want to talk L'0th3r#2451 :)");
+        message.author.send("We dont know each other but dm me if you want to talk L'other#2451 :)");
     }
     else if(message.content.startsWith(PREFIX) && !message.author.bot) {
         const args = message.content.slice(PREFIX.length).split(/ +/);
